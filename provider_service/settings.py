@@ -56,7 +56,8 @@ INSTALLED_APPS = [
     "rest_auth.registration",
 
     "provider_service.users",
-    "provider_service.extra"
+    "provider_service.extra",
+    "provider_service.services",
 ]
 SITE_ID = 1
 
