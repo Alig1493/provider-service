@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "django.contrib.sites",
+    "django.contrib.gis",
     # rest framework
     "rest_framework",
     # allauth
@@ -99,6 +100,7 @@ WSGI_APPLICATION = "provider_service.wsgi.application"
 DEFAULT_DATABASE = config("DATABASE_URL",
                           default="postgres://postgres:postgres@localhost:5432/postgres",
                           cast=dj_database_url.parse)
+DEFAULT_DATABASE["engine"] = "django.contrib.gis.db.backends.postgis"
 
 DATABASES = {
     "default": DEFAULT_DATABASE
