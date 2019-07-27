@@ -22,6 +22,7 @@ from rest_framework.documentation import include_docs_urls
 api_v1_urlpatterns = (
     [
         url(r"^auth/", include("provider_service.users.urls", namespace="users")),
+        url(r"^service/", include("provider_service.services.urls", namespace="services")),
     ], "auth"
 )
 

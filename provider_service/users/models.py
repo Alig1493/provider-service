@@ -17,8 +17,8 @@ class User(AbstractBaseUser, PermissionsMixin):
     http://www.caktusgroup.com/blog/2013/08/07/migrating-custom-user-model-django/
     """
     email = models.EmailField(_("email address"), max_length=254, unique=True)
-    name = models.CharField(_("name"), max_length=30, blank=True)
-    phone_number = models.CharField(_("phone"), max_length=30, blank=True)
+    name = models.CharField(_("name"), max_length=128, blank=True)
+    phone_number = models.CharField(_("phone"), max_length=128, blank=True)
     language = models.ForeignKey(Language, on_delete=models.SET_NULL, blank=True, null=True)
     currency = models.ForeignKey(Currency, on_delete=models.SET_NULL, blank=True, null=True)
     is_staff = models.BooleanField(_("staff status"), default=False,
