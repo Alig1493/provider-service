@@ -15,10 +15,10 @@ class ServiceListCreateAPIView(ListCreateAPIView):
     def get_queryset(self):
         queryset = Service.objects.filter(provider_id=self.request.user.id)
         lat = self.request.query_params.get("lat")
-        long = self.request.query_params.get("long")
+        lng = self.request.query_params.get("long")
 
-        if lat and long:
-            queryset = queryset.filter(polygon__contains=Point(float(lat), float(long)))
+        if lat and lng:
+            queryset = queryset.filter(polygon__contains=Point(float(lat), float(lng)))
 
         return queryset
 
