@@ -8,13 +8,13 @@ from provider_service.services.tests.factory import ServiceFactory
 from provider_service.services.tests.test_utils import Utils
 from provider_service.users.tests.factories import fake
 
+
 # test data taken from:
 # https://github.com/djangonauts/django-rest-framework-gis/
 # blob/master/tests/django_restframework_gis_tests/test_fields.py
 
 
 class TestServices(Utils):
-
     url = reverse("v1:services:list_create")
     name = fake.word()
     price = f"{12:.2f}"
