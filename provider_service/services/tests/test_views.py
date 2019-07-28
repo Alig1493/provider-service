@@ -67,6 +67,20 @@ class TestServices(Utils):
         assert request.status_code == 200
         assert request.data.get("count") == 1
 
+    def test_filter_service_with_string(self, auth_client, user):
+        ServiceFactory(provider=user, polygon=self.first_polygon)
+        ServiceFactory(provider=user, polygon=self.second_polygon)
+
+        params = {
+            "lat": -79.47887419545945,
+            "long": "foo"
+        }
+
+        request = auth_client.get(self.url, data=params)
+
+        assert request.status_code == 200
+        assert request.data.get("count") == 2
+
 
 class TestServiceDetails(Utils):
 
