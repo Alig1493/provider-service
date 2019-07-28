@@ -42,5 +42,17 @@ that include the given lat/lng. The name of the polygon, provider's name, and pr
 should be returned for each polygon. This operation should be FAST. 
 There are thousand of providers and hundreds of thousands of service areas.
 
-Admin panel: <base_url>/admin/
-Api Docs: <base_url>/docs/
+Login Credentials:
+- email: admin@admin.com
+- password: admin12345
+
+Admin panel: http://139.59.27.97.nip.io:62492/
+Api Docs: http://139.59.27.97.nip.io:62492/docs/
+
+The user registration is the equivalent of the provider registration.
+The service section hopefully is self explanatory. You can 
+query for polygons and provider details by making a GET request to:
+
+> http://139.59.27.97.nip.io:62492/api/v1/service/?lat=1.0&long2.0
+
+where lat and long are the query params to be passed in the request.

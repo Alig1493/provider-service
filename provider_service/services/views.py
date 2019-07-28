@@ -8,6 +8,13 @@ from provider_service.services.serializers import ServiceSerializer
 
 
 class ServiceListCreateAPIView(ListCreateAPIView):
+    """
+    For GET request in batch operations,
+    will take latitude nad longitude as query params to filter
+    polygons according to the given point. Example,
+
+    /api/v1/service/?lat=-79.47887419545945&long=43.84581909379884
+    """
     pagination_class = GeoJsonPagination
     permission_classes = [IsAuthenticated]
     serializer_class = ServiceSerializer
