@@ -1,0 +1,16 @@
+[
+  {
+    "model": "extra.language",
+    "pk": 1,
+    "fields": {
+      "name": "en"
+    }
+  },
+  {
+    "model": "extra.currency",
+    "pk": 1,
+    "fields": {
+      "name": "BDT"
+    }
+  }
+]

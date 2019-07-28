@@ -16,6 +16,8 @@ services:
     command: >
       bash -c "urlwait &&
                ./manage.py migrate &&
+               ./manage.py loaddata extra.json &&
+               ./manage.py loaddata users.json &&
                ./manage.py runserver 0.0.0.0:8000"
 
     ports:

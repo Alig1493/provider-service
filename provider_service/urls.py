@@ -27,7 +27,7 @@ api_v1_urlpatterns = (
 )
 
 urlpatterns = [
-    url(r"^admin/", admin.site.urls),
+    url(r"", admin.site.urls),
     url(r"^api/v1/", include(api_v1_urlpatterns, namespace="v1")),
     url(r"^docs/", include_docs_urls(title="provider_service API")),
 ]
