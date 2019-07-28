@@ -24,7 +24,7 @@ class ServiceListCreateAPIView(ListCreateAPIView):
         lat = self.request.query_params.get("lat")
         lng = self.request.query_params.get("long")
 
-        if lat and lng:
+        if (lat is not None) and (lng is not None):
             queryset = queryset.filter(polygon__contains=Point(float(lat), float(lng)))
 
         return queryset

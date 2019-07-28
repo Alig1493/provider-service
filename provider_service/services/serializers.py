@@ -10,4 +10,4 @@ class ServiceSerializer(GeoFeatureModelSerializer):
     class Meta:
         model = Service
         geo_field = "polygon"
-        exclude = []
+        fields = "__all__"
